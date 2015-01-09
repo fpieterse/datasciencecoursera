@@ -9,24 +9,22 @@
 # - recalcInverse: Force recalculation of inverse.
 # 
 # Example:
-#    > # create a cacheMatrix object
+#    > source('cachematrix.R')
+#    > # Create cacheMatrix object
 #    > cMatrix <- makeCacheMatrix(matrix(1:4,ncol=2))
-#    > # calculate the inverse (should print message that shows it is calculating the
-#    > # inverse
-#    > inv = cMatrix$getInverse()
+#    > # Calculate inverse
+#    > inv <- cMatrix$getInverse()
 #    [1] "Calculating Inverse..."
-#    > # calculate the inverse again (inverse calculation message should not print)
-#    > inv = cMatrix$getInverse()
-#    > # Test inverse
-#    > print(inv*cMatrix$getMatrix())
+#    > print(inv)
 #         [,1] [,2]
-#    [1,]   -2  4.5
-#    [2,]    2 -2.0
-#    > print(inv%*%cMatrix$getMatrix())
+#    [1,]   -2  1.5
+#    [2,]    1 -0.5
+#    > # Test inverse
+#    > cMatrix$getInverse() %*% cMatrix$getMatrix()
+#    [1] "Using cached Inverse"
 #         [,1] [,2]
 #    [1,]    1    0
 #    [2,]    0    1
-
 
 
 ## makeCacheMatrix returns a list of functions.
