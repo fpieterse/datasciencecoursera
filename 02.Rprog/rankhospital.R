@@ -44,7 +44,7 @@ rankhospital <- function(state, outcome, num)
         num = 1
     }
 
-    if (ncol(stateData) < num)
+    if (nrow(stateData) < num)
     {
         return(NA)
     }
